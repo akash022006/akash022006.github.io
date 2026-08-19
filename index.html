@@ -1,60 +1,102 @@
-<!-- Add this Card inside your Featured Work section -->
-<div class="card" onclick="openModal()">
-    <h3>📱 LanguaCall AI Showcase</h3>
-    <p>Real-time translation prototype with advanced AI agents and 3D visual flow.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash | AI Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --accent: #00f2fe; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.7; }
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        
+        /* Header Setup */
+        header { text-align: center; padding: 80px 20px 30px; }
+        h1 { font-size: 4em; margin: 0; background: linear-gradient(to right, #fff, #71717a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
+        .tagline { color: var(--accent); font-size: 1.1em; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; font-weight: 400; }
+        
+        .section-title { font-size: 1.5em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; margin-top: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; color: #f0f6fc;}
+        p { color: #9ca3af; font-size: 1.1em; }
 
-<!-- Modal Structure (Paste this before </body>) -->
-<div id="imageModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content-wrapper">
-        <div class="glow-effect">
-            <img src="1000110016.png" class="interactive-img" id="mainImg">
-            <!-- Translation Orbit stays in position -->
+        /* Card Setup */
+        .card { 
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 35px; border-radius: 20px; cursor: pointer; transition: 0.4s; position: relative;
+        }
+        .card:hover { border-color: var(--accent); box-shadow: 0 0 30px rgba(0, 242, 254, 0.15); transform: translateY(-5px); }
+        .card h3 { color: var(--accent); margin-top: 0; font-size: 1.6em; }
+        .card p { margin-bottom: 0; }
+
+        /* Skills Setup */
+        .skills { list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap; }
+        .skills li { background: rgba(255,255,255,0.05); padding: 12px 25px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); color: #e5e7eb;}
+
+        /* =========================================
+           LANGUACALL 3D SHOWCASE (MODAL)
+           ========================================= */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,5,5,0.95); backdrop-filter: blur(10px); z-index: 1000; overflow: hidden; }
+        .wrapper { display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; }
+        
+        /* Floating Image */
+        .interactive-img { width: 90%; max-width: 600px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.9); animation: float 4s ease-in-out infinite; }
+        @keyframes float { 
+            0%, 100% { transform: translateY(0); } 
+            50% { transform: translateY(-20px); } 
+        }
+
+        /* Pulsing Translation Text */
+        .text-orbit { 
+            position: absolute; top: 32%; 
+            background: rgba(0,242,254,0.15); color: #fff;
+            padding: 12px 25px; border-radius: 30px; border: 1px solid var(--accent);
+            animation: pulse 2s infinite alternate; font-weight: 600; font-size: 1.1em;
+            backdrop-filter: blur(5px);
+        }
+        @keyframes pulse { 
+            from { transform: scale(1); box-shadow: 0 0 10px var(--accent); } 
+            to { transform: scale(1.05); box-shadow: 0 0 30px var(--accent); } 
+        }
+        
+        .close { position: absolute; top: 30px; right: 40px; font-size: 50px; cursor: pointer; color: #fff; z-index: 1001; transition: 0.3s; }
+        .close:hover { color: var(--accent); transform: scale(1.1); }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>AKASH</h1>
+        <div class="tagline">App and website developer using AI Agents</div>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">About Me</h2>
+        <p>I am a developer focused on building robust applications and websites using advanced AI Agents. I leverage AI tools to write clean code, design scalable software architecture, and create smooth user experiences efficiently.</p>
+        
+        <h2 class="section-title">Featured Work</h2>
+        <!-- Card clicks to open modal -->
+        <div class="card" onclick="document.getElementById('m').style.display='block'">
+            <h3>📱 LanguaCall AI Showcase</h3>
+            <p>Click here to view the 3D Interactive AI Translation prototype with floating animations and glowing translation effects.</p>
+        </div>
+        
+        <h2 class="section-title">Core Capabilities</h2>
+        <ul class="skills">
+            <li>App development using AI Agents</li>
+        </ul>
+        
+    </div>
+
+    <!-- The 3D Interactive Viewer -->
+    <div id="m" class="modal">
+        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+        <div class="wrapper">
+            <!-- Ensure image name is exactly this -->
+            <img src="1000110016.png" class="interactive-img" alt="LanguaCall AI prototype">
+            
             <div class="text-orbit">வணக்கம்! ➔ Hello! How are you?</div>
         </div>
     </div>
-</div>
 
-<style>
-/* 3D Interactive Effect */
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: #050505; }
-.modal-content-wrapper { display: flex; justify-content: center; align-items: center; height: 100vh; }
-
-.interactive-img { 
-    width: 80%; max-width: 600px; 
-    border-radius: 20px;
-    /* Soft 3D float animation */
-    animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotateX(0deg); }
-    50% { transform: translateY(-20px) rotateX(2deg); }
-}
-
-/* Fixed Position Orbiting Text */
-.text-orbit {
-    position: absolute;
-    top: 28%; /* Adjust to match the text position in image */
-    left: 45%;
-    background: rgba(0, 242, 254, 0.15);
-    border: 1px solid #00f2fe;
-    padding: 10px 20px;
-    border-radius: 20px;
-    color: #fff;
-    animation: pulse 2s infinite alternate;
-}
-
-@keyframes pulse {
-    from { transform: scale(1); box-shadow: 0 0 10px #00f2fe; }
-    to { transform: scale(1.05); box-shadow: 0 0 25px #00f2fe; }
-}
-
-.close { color: #fff; position: fixed; top: 20px; right: 40px; font-size: 50px; cursor: pointer; }
-</style>
-
-<script>
-function openModal() { document.getElementById('imageModal').style.display = 'block'; }
-function closeModal() { document.getElementById('imageModal').style.display = 'none'; }
-</script>
+</body>
+</html>
