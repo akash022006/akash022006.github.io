@@ -1,102 +1,2265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash | AI Developer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #050505; --accent: #00f2fe; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.7; }
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        
-        /* Header Setup */
-        header { text-align: center; padding: 80px 20px 30px; }
-        h1 { font-size: 4em; margin: 0; background: linear-gradient(to right, #fff, #71717a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
-        .tagline { color: var(--accent); font-size: 1.1em; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; font-weight: 400; }
-        
-        .section-title { font-size: 1.5em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; margin-top: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; color: #f0f6fc;}
-        p { color: #9ca3af; font-size: 1.1em; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A. AKASH — AI App Developer building intelligent applications, AI Agents and real-world software systems." />
+  <meta name="theme-color" content="#05060a" />
 
-        /* Card Setup */
-        .card { 
-            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); 
-            padding: 35px; border-radius: 20px; cursor: pointer; transition: 0.4s; position: relative;
-        }
-        .card:hover { border-color: var(--accent); box-shadow: 0 0 30px rgba(0, 242, 254, 0.15); transform: translateY(-5px); }
-        .card h3 { color: var(--accent); margin-top: 0; font-size: 1.6em; }
-        .card p { margin-bottom: 0; }
+  <title>A. AKASH — AI App Developer</title>
 
-        /* Skills Setup */
-        .skills { list-style: none; padding: 0; display: flex; gap: 15px; flex-wrap: wrap; }
-        .skills li { background: rgba(255,255,255,0.05); padding: 12px 25px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); color: #e5e7eb;}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* =========================================
-           LANGUACALL 3D SHOWCASE (MODAL)
-           ========================================= */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,5,5,0.95); backdrop-filter: blur(10px); z-index: 1000; overflow: hidden; }
-        .wrapper { display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; }
-        
-        /* Floating Image */
-        .interactive-img { width: 90%; max-width: 600px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.9); animation: float 4s ease-in-out infinite; }
-        @keyframes float { 
-            0%, 100% { transform: translateY(0); } 
-            50% { transform: translateY(-20px); } 
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-        /* Pulsing Translation Text */
-        .text-orbit { 
-            position: absolute; top: 32%; 
-            background: rgba(0,242,254,0.15); color: #fff;
-            padding: 12px 25px; border-radius: 30px; border: 1px solid var(--accent);
-            animation: pulse 2s infinite alternate; font-weight: 600; font-size: 1.1em;
-            backdrop-filter: blur(5px);
-        }
-        @keyframes pulse { 
-            from { transform: scale(1); box-shadow: 0 0 10px var(--accent); } 
-            to { transform: scale(1.05); box-shadow: 0 0 30px var(--accent); } 
-        }
-        
-        .close { position: absolute; top: 30px; right: 40px; font-size: 50px; cursor: pointer; color: #fff; z-index: 1001; transition: 0.3s; }
-        .close:hover { color: var(--accent); transform: scale(1.1); }
-    </style>
+  <style>
+
+    :root {
+      --bg: #05060a;
+      --panel: #0b0e15;
+      --panel2: #101522;
+      --text: #f5f7fb;
+      --muted: #8992a5;
+      --line: rgba(255,255,255,.10);
+      --blue: #5b8cff;
+      --cyan: #55d8ff;
+      --purple: #9b7bff;
+      --green: #68e0a0;
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(
+          circle at 75% 8%,
+          rgba(91,140,255,.14),
+          transparent 28rem
+        ),
+        radial-gradient(
+          circle at 15% 35%,
+          rgba(155,123,255,.08),
+          transparent 26rem
+        ),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .22;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 75%
+        );
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .nav {
+      position: fixed;
+      z-index: 20;
+
+      top: 18px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: min(calc(100% - 30px), 1040px);
+
+      padding: 10px 12px;
+
+      border: 1px solid var(--line);
+
+      background: rgba(7,9,14,.72);
+
+      backdrop-filter: blur(18px);
+
+      border-radius: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.04em;
+      padding-left: 8px;
+    }
+
+    .brand span {
+      color: var(--cyan);
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 5px;
+    }
+
+    .navlinks a {
+      padding: 9px 12px;
+      border-radius: 12px;
+
+      color: #aab2c3;
+
+      font-size: 13px;
+
+      transition: .2s;
+    }
+
+    .navlinks a:hover {
+      background: rgba(255,255,255,.06);
+      color: #fff;
+    }
+
+    .nav-cta {
+      padding: 10px 15px;
+
+      border-radius: 12px;
+
+      background: #fff;
+      color: #05060a;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: grid;
+      place-items: center;
+
+      padding: 140px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.1fr .9fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 8px 11px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      color: #c8d0df;
+
+      background: rgba(255,255,255,.025);
+
+      font: 12px "DM Mono", monospace;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 18px var(--green);
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+
+      line-height: .98;
+
+      letter-spacing: -.065em;
+
+      margin: 24px 0;
+    }
+
+    .gradient {
+      background:
+        linear-gradient(
+          100deg,
+          #fff 25%,
+          #9fc7ff 55%,
+          #9b7bff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 640px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 30px;
+
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 18px;
+
+      border-radius: 13px;
+
+      border: 1px solid var(--line);
+
+      font-weight: 700;
+
+      font-size: 14px;
+
+      transition: .25s;
+    }
+
+    .btn.primary {
+      background: #fff;
+      color: #05060a;
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(255,255,255,.25);
+    }
+
+    /* =========================
+       TERMINAL
+    ========================= */
+
+    .terminal {
+      border: 1px solid var(--line);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.018)
+        );
+
+      border-radius: 26px;
+
+      padding: 16px;
+
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.45);
+
+      transform:
+        perspective(1000px)
+        rotateY(-6deg)
+        rotateX(2deg);
+    }
+
+    .terminal-top {
+      display: flex;
+
+      gap: 7px;
+
+      padding: 3px 4px 14px;
+    }
+
+    .orb {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #4a5263;
+    }
+
+    .terminal-body {
+      background: #07090e;
+
+      border-radius: 18px;
+
+      padding: 22px;
+
+      min-height: 330px;
+
+      font:
+        13px/1.9
+        "DM Mono",
+        monospace;
+
+      color: #aab5c9;
+    }
+
+    .code-blue {
+      color: #76b6ff;
+    }
+
+    .code-purple {
+      color: #b59cff;
+    }
+
+    .code-green {
+      color: #7ee3ac;
+    }
+
+    .code-dim {
+      color: #596376;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      align-items: end;
+
+      margin-bottom: 42px;
+    }
+
+    .kicker {
+      font:
+        11px
+        "DM Mono",
+        monospace;
+
+      color: var(--cyan);
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size:
+        clamp(34px,5vw,58px);
+
+      letter-spacing: -.055em;
+
+      line-height: 1.05;
+
+      margin-top: 9px;
+    }
+
+    .section-head p {
+      max-width: 430px;
+
+      color: var(--muted);
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+
+      background:
+        rgba(255,255,255,.025);
+
+      border-radius: var(--radius);
+
+      padding: 25px;
+
+      min-height: 210px;
+
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(91,140,255,.35);
+
+      background:
+        rgba(255,255,255,.04);
+    }
+
+    .card .num {
+      font:
+        12px
+        "DM Mono";
+
+      color: #677086;
+    }
+
+    .card h3 {
+      margin: 35px 0 8px;
+
+      font-size: 21px;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    /* =========================
+       AI AGENTS
+    ========================= */
+
+    .agent {
+      display: grid;
+
+      grid-template-columns:
+        .85fr 1.15fr;
+
+      gap: 20px;
+    }
+
+    .agent-copy,
+    .agent-flow {
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      background:
+        rgba(255,255,255,.025);
+    }
+
+    .agent-copy {
+      padding: 32px;
+    }
+
+    .agent-copy h3 {
+      font-size: 30px;
+
+      letter-spacing: -.04em;
+
+      margin: 10px 0 14px;
+    }
+
+    .agent-copy p {
+      color: var(--muted);
+    }
+
+    .pillrow {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 25px;
+    }
+
+    .pill {
+      font:
+        11px
+        "DM Mono";
+
+      padding: 8px 10px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 999px;
+
+      color: #b9c1d0;
+    }
+
+    .agent-flow {
+      padding: 25px;
+
+      display: grid;
+
+      place-items: center;
+
+      min-height: 360px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .flow {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 12px;
+
+      width: 100%;
+
+      position: relative;
+    }
+
+    .node {
+      padding: 18px 10px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        rgba(91,140,255,.28);
+
+      background:
+        rgba(91,140,255,.06);
+
+      border-radius: 16px;
+
+      font-weight: 700;
+
+      font-size: 13px;
+    }
+
+    .node small {
+      display: block;
+
+      color: #7d8aa2;
+
+      font:
+        10px
+        "DM Mono";
+
+      margin-top: 5px;
+    }
+
+    .line {
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #5b8cff,
+          transparent
+        );
+
+      margin: auto;
+
+      width: 80%;
+    }
+
+    /* =========================
+       LANGUACALL PROJECT
+    ========================= */
+
+    .featured {
+      display: grid;
+
+      grid-template-columns:
+        .85fr 1.15fr;
+
+      gap: 35px;
+
+      align-items: center;
+    }
+
+    .project-copy h3 {
+      font-size: 44px;
+
+      letter-spacing: -.05em;
+
+      margin: 8px 0;
+    }
+
+    .project-copy p {
+      color: var(--muted);
+
+      max-width: 520px;
+    }
+
+    .tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin: 22px 0;
+    }
+
+    .tag {
+      font:
+        11px
+        "DM Mono";
+
+      border:
+        1px solid
+        var(--line);
+
+      padding: 7px 9px;
+
+      border-radius: 8px;
+
+      color: #b6c0d2;
+    }
+
+    /* =========================
+       3D SLIDESHOW
+    ========================= */
+
+    .showcase {
+      position: relative;
+
+      height: 600px;
+
+      display: grid;
+
+      place-items: center;
+
+      perspective: 1400px;
+    }
+
+    .stage {
+      position: relative;
+
+      width: 270px;
+
+      height: 535px;
+
+      transform-style:
+        preserve-3d;
+    }
+
+    .shot {
+      position: absolute;
+
+      inset: 0;
+
+      border-radius: 30px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(255,255,255,.17);
+
+      background: #0a0c12;
+
+      box-shadow:
+        0 35px 80px
+        rgba(0,0,0,.55);
+
+      transition:
+        transform .8s
+        cubic-bezier(.2,.75,.2,1),
+        opacity .6s,
+        filter .6s;
+    }
+
+    .shot img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .shot::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      box-shadow:
+        inset 0 0 40px
+        rgba(0,0,0,.35);
+
+      pointer-events: none;
+    }
+
+    .shot.s1 {
+      transform:
+        translateX(-230px)
+        translateZ(-180px)
+        rotateY(28deg)
+        scale(.82);
+
+      opacity: .35;
+
+      filter: brightness(.55);
+    }
+
+    .shot.s2 {
+      transform:
+        translateX(-115px)
+        translateZ(-70px)
+        rotateY(18deg)
+        scale(.91);
+
+      opacity: .68;
+
+      filter: brightness(.72);
+    }
+
+    .shot.s3 {
+      transform:
+        translateZ(0)
+        rotateY(0)
+        scale(1);
+
+      opacity: 1;
+    }
+
+    .shot.s4 {
+      transform:
+        translateX(115px)
+        translateZ(-70px)
+        rotateY(-18deg)
+        scale(.91);
+
+      opacity: .68;
+
+      filter: brightness(.72);
+    }
+
+    .shot.s5 {
+      transform:
+        translateX(230px)
+        translateZ(-180px)
+        rotateY(-28deg)
+        scale(.82);
+
+      opacity: .35;
+
+      filter: brightness(.55);
+    }
+
+    .slide-ui {
+      position: absolute;
+
+      bottom: 5px;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      display: flex;
+
+      gap: 8px;
+
+      z-index: 3;
+    }
+
+    .slide-ui button {
+      width: 38px;
+      height: 38px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        var(--line);
+
+      background:
+        rgba(10,12,18,.75);
+
+      color: #fff;
+
+      cursor: pointer;
+
+      backdrop-filter: blur(10px);
+    }
+
+    .slide-ui button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .counter {
+      position: absolute;
+
+      top: 10px;
+      right: 15px;
+
+      font:
+        11px
+        "DM Mono";
+
+      color: #78839a;
+
+      z-index: 3;
+    }
+
+    /* =========================
+       TECH STACK
+    ========================= */
+
+    .stack {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 12px;
+    }
+
+    .tech {
+      border:
+        1px solid
+        var(--line);
+
+      padding: 18px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255,255,255,.02);
+    }
+
+    .tech b {
+      font-size: 14px;
+    }
+
+    .tech span {
+      display: block;
+
+      color: #78839a;
+
+      font:
+        11px
+        "DM Mono";
+
+      margin-top: 6px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 30px;
+
+      padding: 50px;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(91,140,255,.18),
+          transparent 22rem
+        ),
+        rgba(255,255,255,.025);
+    }
+
+    .contact h2 {
+      max-width: 700px;
+    }
+
+    .contact p {
+      color: var(--muted);
+
+      margin: 15px 0 24px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 0 55px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      color: #6f788b;
+
+      font:
+        11px
+        "DM Mono";
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(20px);
+
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: none;
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media(max-width:900px) {
+
+      .navlinks {
+        display: none;
+      }
+
+      .hero-grid,
+      .agent,
+      .featured {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .terminal {
+        transform: none;
+      }
+
+      .cards {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .stack {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .showcase {
+        height: 540px;
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:600px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 26px),
+            var(--max)
+          );
+      }
+
+      .nav {
+        top: 10px;
+
+        width:
+          calc(100% - 20px);
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .stack {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 15px;
+      }
+
+      .project-copy h3 {
+        font-size: 36px;
+      }
+
+      .showcase {
+        height: 490px;
+
+        overflow: hidden;
+      }
+
+      .stage {
+        width: 225px;
+        height: 445px;
+      }
+
+      .shot.s1 {
+        transform:
+          translateX(-170px)
+          translateZ(-140px)
+          rotateY(25deg)
+          scale(.75);
+      }
+
+      .shot.s2 {
+        transform:
+          translateX(-85px)
+          translateZ(-60px)
+          rotateY(16deg)
+          scale(.86);
+      }
+
+      .shot.s4 {
+        transform:
+          translateX(85px)
+          translateZ(-60px)
+          rotateY(-16deg)
+          scale(.86);
+      }
+
+      .shot.s5 {
+        transform:
+          translateX(170px)
+          translateZ(-140px)
+          rotateY(-25deg)
+          scale(.75);
+      }
+
+      .contact {
+        padding: 30px 22px;
+      }
+
+      footer {
+        display: block;
+      }
+
+      footer div + div {
+        margin-top: 10px;
+      }
+
+    }
+
+  </style>
 </head>
+
 <body>
-    
-    <header>
-        <h1>AKASH</h1>
-        <div class="tagline">App and website developer using AI Agents</div>
-    </header>
 
-    <div class="container">
-        
-        <h2 class="section-title">About Me</h2>
-        <p>I am a developer focused on building robust applications and websites using advanced AI Agents. I leverage AI tools to write clean code, design scalable software architecture, and create smooth user experiences efficiently.</p>
-        
-        <h2 class="section-title">Featured Work</h2>
-        <!-- Card clicks to open modal -->
-        <div class="card" onclick="document.getElementById('m').style.display='block'">
-            <h3>📱 LanguaCall AI Showcase</h3>
-            <p>Click here to view the 3D Interactive AI Translation prototype with floating animations and glowing translation effects.</p>
-        </div>
-        
-        <h2 class="section-title">Core Capabilities</h2>
-        <ul class="skills">
-            <li>App development using AI Agents</li>
-        </ul>
-        
+  <div class="grid-bg"></div>
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <nav class="nav">
+
+    <a class="brand" href="#home">
+      A<span>.</span> AKASH
+    </a>
+
+    <div class="navlinks">
+
+      <a href="#about">About</a>
+
+      <a href="#agents">AI Agents</a>
+
+      <a href="#projects">Projects</a>
+
+      <a href="#stack">Stack</a>
+
+      <a href="#contact">Contact</a>
+
     </div>
 
-    <!-- The 3D Interactive Viewer -->
-    <div id="m" class="modal">
-        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-        <div class="wrapper">
-            <!-- Ensure image name is exactly this -->
-            <img src="1000110016.png" class="interactive-img" alt="LanguaCall AI prototype">
-            
-            <div class="text-orbit">வணக்கம்! ➔ Hello! How are you?</div>
+    <a class="nav-cta" href="#contact">
+      Let's Talk
+    </a>
+
+  </nav>
+
+
+  <main id="home">
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+
+            <span class="dot"></span>
+
+            AI APP DEVELOPER · BUILDING IN PUBLIC
+
+          </div>
+
+          <h1>
+
+            Building
+            <span class="gradient">
+              intelligent apps
+            </span>
+            with AI Agents.
+
+          </h1>
+
+          <p>
+
+            I design and build modern applications
+            that connect people, data, APIs and AI
+            into useful real-world experiences.
+
+          </p>
+
+          <div class="actions">
+
+            <a
+              class="btn primary"
+              href="#projects"
+            >
+              Explore Projects ↗
+            </a>
+
+            <a
+              class="btn secondary"
+              href="#agents"
+            >
+              See AI Architecture
+            </a>
+
+          </div>
+
         </div>
+
+
+        <div class="terminal reveal">
+
+          <div class="terminal-top">
+
+            <span class="orb"></span>
+            <span class="orb"></span>
+            <span class="orb"></span>
+
+          </div>
+
+          <div class="terminal-body">
+
+            <div class="code-dim">
+              // akash.ai / system
+            </div>
+
+            <br>
+
+            <div>
+              <span class="code-purple">
+                const
+              </span>
+
+              developer =
+
+              <span class="code-green">
+                "A. AKASH"
+              </span>;
+            </div>
+
+            <div>
+
+              <span class="code-purple">
+                const
+              </span>
+
+              focus = [
+
+            </div>
+
+            <div>
+              &nbsp;&nbsp;
+              <span class="code-green">
+                "AI Applications"
+              </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;
+              <span class="code-green">
+                "AI Agents"
+              </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;
+              <span class="code-green">
+                "API Integration"
+              </span>,
+            </div>
+
+            <div>
+              &nbsp;&nbsp;
+              <span class="code-green">
+                "Full-Stack Systems"
+              </span>
+            </div>
+
+            <div>
+              ];
+            </div>
+
+            <br>
+
+            <div>
+              <span class="code-blue">
+                agent
+              </span>.reason(problem);
+            </div>
+
+            <div>
+              <span class="code-blue">
+                agent
+              </span>.chooseTools();
+            </div>
+
+            <div>
+              <span class="code-blue">
+                agent
+              </span>.execute();
+            </div>
+
+            <div>
+              <span class="code-blue">
+                agent
+              </span>.returnResult();
+
+              <span class="code-dim">
+                ✓
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="kicker">
+              01 / About
+            </div>
+
+            <h2>
+              Software with a reason.
+            </h2>
+
+          </div>
+
+          <p>
+
+            My focus is not just making screens.
+            It is turning a real problem into a
+            working digital system — from interface
+            to backend, APIs and AI.
+
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+          <article class="card reveal">
+
+            <div class="num">
+              01
+            </div>
+
+            <h3>
+              Problem First
+            </h3>
+
+            <p>
+
+              Start with the user problem,
+              then choose the right technology
+              instead of forcing AI into everything.
+
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="num">
+              02
+            </div>
+
+            <h3>
+              AI Native
+            </h3>
+
+            <p>
+
+              Use LLMs, speech, translation and
+              agent workflows where they create
+              a meaningful advantage.
+
+            </p>
+
+          </article>
+
+
+          <article class="card reveal">
+
+            <div class="num">
+              03
+            </div>
+
+            <h3>
+              Build & Iterate
+            </h3>
+
+            <p>
+
+              Prototype quickly, test real workflows,
+              fix edge cases and continuously improve
+              the product.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI AGENTS
+    ========================= -->
+
+    <section id="agents">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="kicker">
+              02 / AI Agents
+            </div>
+
+            <h2>
+              I build systems that can act.
+            </h2>
+
+          </div>
+
+          <p>
+
+            An AI Agent can understand intent,
+            choose tools, work with APIs or data,
+            execute a workflow and return a useful result.
+
+          </p>
+
+        </div>
+
+
+        <div class="agent">
+
+          <div class="agent-copy reveal">
+
+            <div class="kicker">
+              AGENT MINDSET
+            </div>
+
+            <h3>
+              From prompt → decision → action.
+            </h3>
+
+            <p>
+
+              My portfolio projects explore how AI
+              can become part of an application's
+              workflow instead of being only a chat box.
+
+            </p>
+
+
+            <div class="pillrow">
+
+              <span class="pill">
+                LLM APIs
+              </span>
+
+              <span class="pill">
+                Tool Calling
+              </span>
+
+              <span class="pill">
+                RAG
+              </span>
+
+              <span class="pill">
+                Automation
+              </span>
+
+              <span class="pill">
+                Realtime
+              </span>
+
+              <span class="pill">
+                APIs
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="agent-flow reveal">
+
+            <div class="flow">
+
+              <div class="node">
+
+                USER
+
+                <small>
+                  intent
+                </small>
+
+              </div>
+
+              <div class="node">
+
+                AI AGENT
+
+                <small>
+                  reason
+                </small>
+
+              </div>
+
+              <div class="node">
+
+                TOOLS
+
+                <small>
+                  act
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="line"></div>
+
+
+            <div class="flow">
+
+              <div class="node">
+
+                API
+
+                <small>
+                  connect
+                </small>
+
+              </div>
+
+              <div class="node">
+
+                DATABASE
+
+                <small>
+                  retrieve
+                </small>
+
+              </div>
+
+              <div class="node">
+
+                RESULT
+
+                <small>
+                  respond
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LANGUACALL
+    ========================= -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="kicker">
+              03 / Featured Project
+            </div>
+
+            <h2>
+              LanguaCall.
+            </h2>
+
+          </div>
+
+          <p>
+
+            A real-time communication concept
+            focused on breaking language barriers
+            through voice, translation and calling workflows.
+
+          </p>
+
+        </div>
+
+
+        <div class="featured">
+
+
+          <!-- PROJECT TEXT -->
+
+          <div class="project-copy reveal">
+
+            <div class="kicker">
+              AI COMMUNICATION PLATFORM
+            </div>
+
+            <h3>
+              Speak naturally.
+              Let AI handle the language.
+            </h3>
+
+            <p>
+
+              LanguaCall connects two people who speak
+              different languages. The experience combines
+              calling, speech-to-text, AI translation
+              and real-time interaction.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Speech-to-Text
+              </span>
+
+              <span class="tag">
+                AI Translation
+              </span>
+
+              <span class="tag">
+                Realtime
+              </span>
+
+              <span class="tag">
+                Supabase
+              </span>
+
+              <span class="tag">
+                Authentication
+              </span>
+
+              <span class="tag">
+                API Integration
+              </span>
+
+            </div>
+
+
+            <a
+              class="btn primary"
+              href="#contact"
+            >
+              Discuss the project →
+            </a>
+
+          </div>
+
+
+          <!-- 3D SLIDESHOW -->
+
+          <div
+            class="showcase reveal"
+            aria-label="LanguaCall 3D screenshot slideshow"
+          >
+
+            <div
+              class="counter"
+              id="counter"
+            >
+              01 / 07
+            </div>
+
+
+            <div
+              class="stage"
+              id="stage"
+            ></div>
+
+
+            <div class="slide-ui">
+
+              <button
+                id="prev"
+                aria-label="Previous screenshot"
+              >
+                ←
+              </button>
+
+              <button
+                id="next"
+                aria-label="Next screenshot"
+              >
+                →
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECH STACK
+    ========================= -->
+
+    <section id="stack">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="kicker">
+              04 / Stack
+            </div>
+
+            <h2>
+              Tools I build with.
+            </h2>
+
+          </div>
+
+          <p>
+
+            A practical stack for building
+            AI-powered applications from
+            prototype to usable product.
+
+          </p>
+
+        </div>
+
+
+        <div class="stack">
+
+          <div class="tech reveal">
+
+            <b>
+              Python
+            </b>
+
+            <span>
+              AI · Data · Backend
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              JavaScript
+            </b>
+
+            <span>
+              Web · Interaction
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              React
+            </b>
+
+            <span>
+              UI · Components
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              Node.js
+            </b>
+
+            <span>
+              APIs · Backend
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              Supabase
+            </b>
+
+            <span>
+              Auth · Database · Realtime
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              LLM APIs
+            </b>
+
+            <span>
+              AI · Agents · Translation
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              FastAPI
+            </b>
+
+            <span>
+              Python APIs
+            </span>
+
+          </div>
+
+
+          <div class="tech reveal">
+
+            <b>
+              Git / GitHub
+            </b>
+
+            <span>
+              Version Control
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact reveal">
+
+          <div class="kicker">
+            05 / Contact
+          </div>
+
+          <h2>
+            Have a problem worth building?
+          </h2>
+
+          <p>
+
+            I'm interested in AI-powered applications,
+            intelligent automation and software
+            that solves practical problems.
+
+          </p>
+
+
+          <div class="actions">
+
+            <!-- CHANGE THIS EMAIL -->
+
+            <a
+              class="btn primary"
+              href="mailto:your-email@example.com"
+            >
+              Email Me ↗
+            </a>
+
+
+            <!-- CHANGE GITHUB LINK -->
+
+            <a
+              class="btn secondary"
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+
+            <!-- CHANGE LINKEDIN LINK -->
+
+            <a
+              class="btn secondary"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer class="container">
+
+    <div>
+      © 2026 A. AKASH
     </div>
+
+    <div>
+      AI APP DEVELOPER · AI AGENTS · FULL-STACK
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /*
+      LANGUACALL SCREENSHOTS
+
+      Keep these images inside:
+
+      assets/
+
+      Example:
+
+      assets/languacall-01.jpg
+    */
+
+    const images = [
+
+      "assets/languacall-01.jpg",
+
+      "assets/languacall-02.jpg",
+
+      "assets/languacall-03.jpg",
+
+      "assets/languacall-04.jpg",
+
+      "assets/languacall-05.jpg",
+
+      "assets/languacall-06.jpg",
+
+      "assets/languacall-07.jpg"
+
+    ];
+
+
+    const stage =
+      document.getElementById("stage");
+
+
+    const counter =
+      document.getElementById("counter");
+
+
+    let active = 0;
+
+    let timer;
+
+
+    /*
+      RENDER 3D SLIDES
+    */
+
+    function render() {
+
+      stage.innerHTML = "";
+
+      const n = images.length;
+
+
+      for (
+        let offset = -2;
+        offset <= 2;
+        offset++
+      ) {
+
+        const index =
+          (active + offset + n) % n;
+
+
+        const img =
+          document.createElement("div");
+
+
+        img.className = "shot";
+
+
+        img.innerHTML = `
+
+          <img
+            src="${images[index]}"
+            alt="LanguaCall app screenshot ${index + 1}"
+            loading="${offset === 0 ? "eager" : "lazy"}"
+          >
+
+        `;
+
+
+        const pos =
+          offset + 3;
+
+
+        img.classList.add(
+          "s" + pos
+        );
+
+
+        stage.appendChild(img);
+
+      }
+
+
+      counter.textContent =
+        `${String(active + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}`;
+
+    }
+
+
+    /*
+      NEXT SLIDE
+    */
+
+    function next() {
+
+      active =
+        (active + 1) %
+        images.length;
+
+      render();
+
+    }
+
+
+    /*
+      PREVIOUS SLIDE
+    */
+
+    function prev() {
+
+      active =
+        (active - 1 + images.length) %
+        images.length;
+
+      render();
+
+    }
+
+
+    /*
+      BUTTONS
+    */
+
+    document
+      .getElementById("next")
+      .addEventListener(
+        "click",
+        () => {
+
+          next();
+
+          restart();
+
+        }
+      );
+
+
+    document
+      .getElementById("prev")
+      .addEventListener(
+        "click",
+        () => {
+
+          prev();
+
+          restart();
+
+        }
+      );
+
+
+    /*
+      AUTO SLIDE
+    */
+
+    function start() {
+
+      timer =
+        setInterval(
+          next,
+          3200
+        );
+
+    }
+
+
+    function restart() {
+
+      clearInterval(timer);
+
+      start();
+
+    }
+
+
+    /*
+      INITIAL RENDER
+    */
+
+    render();
+
+    start();
+
+
+    /*
+      SCROLL REVEAL
+    */
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold: .12
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(
+        element => {
+
+          observer.observe(element);
+
+        }
+      );
+
+  </script>
 
 </body>
 </html>
